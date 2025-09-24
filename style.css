@@ -1,0 +1,243 @@
+/* style.css - Refreshed Version with Mobile Media Queries and Light Blue Search Button */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.paraSF {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.current-tab {
+  background-color: rgba(219, 226, 239, 0.5);
+  border-radius: 4px;
+  color: #000;
+}
+
+.wheather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grant-loc-container,
+.form-container,
+.loading-container,
+.user-info-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.grant-loc-container.active,
+.form-container.active,
+.loading-container.active,
+.user-info-container.active {
+  display: flex;
+}
+
+.btn {
+  background: #fff;
+  color: #00bcd4;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #00bcd4;
+  color: #fff;
+}
+
+.form-container {
+  width: 100%;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.form-container.active {
+  transform: scale(1);
+}
+
+.form-container input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  margin-right: 10px;
+  outline: none;
+}
+
+/* Stylish placeholder */
+/* .form-container input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+} */
+
+.form-container input:focus::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Search button styled like background */
+.form-container button {
+  padding: 10px 15px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.user-info-container img[data-weathericon] {
+  width: 100px;
+  height: 100px;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.parameter {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.parameter .pra,
+.parameter > div {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 15px;
+  width: 30%;
+}
+
+.parameter img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.parameter p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.loading-container img {
+  margin-bottom: 10px;
+}
+
+/* --- Mobile Responsive Adjustments --- */
+@media (max-width: 480px) {
+  .paraSF {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .tab-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tab {
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+
+  .form-container input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .parameter {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .parameter .pra,
+  .parameter > div {
+    width: 100%;
+  }
+
+  .user-info-container img[data-weathericon] {
+    width: 80px;
+    height: 80px;
+  }
+
+  [data-temp] {
+    font-size: 2rem;
+  }
+
+  .name {
+    font-size: 1rem;
+    gap: 5px;
+  }
+}
